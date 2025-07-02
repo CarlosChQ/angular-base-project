@@ -1,0 +1,64 @@
+<header class="sticky top-0 z-50 bg-base-100 transition-shadow duration-300" [class.shadow-md]="isScrolled">
+      <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+        <a routerLink="/" class="text-2xl font-bold text-primary">SaaSApp</a>
+        <div class="flex gap-4">
+          <a routerLink="/login" class="btn btn-ghost">Iniciar Sesión</a>
+          <a routerLink="/register" class="btn btn-primary">Regístrate</a>
+        </div>
+      </div>
+</header>
+<main>
+  <!-- Hero Section -->
+  <section class="bg-gradient-to-r from-primary to-secondary text-white py-20">
+    <div class="container mx-auto px-4 text-center">
+      <h1 class="text-5xl font-bold mb-6">Potencia tu negocio con SaaSApp</h1>
+      <p class="text-xl mb-8 max-w-2xl mx-auto">
+        La solución todo-en-uno para gestionar tus proyectos, equipos y clientes.
+      </p>
+      <div class="flex gap-4 justify-center">
+        <a routerLink="/register" class="btn btn-accent btn-lg">Comenzar Gratis</a>
+        <a href="#features" class="btn btn-outline btn-lg text-white">Saber Más</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section id="features" class="py-16 bg-base-100">
+    <div class="container mx-auto px-4">
+      <h2 class="text-3xl font-bold text-center mb-12">Características Principales</h2>
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="card bg-base-200 shadow-lg">
+          <div class="card-body">
+            <h3 class="card-title text-xl">🚀 Fácil de Usar</h3>
+            <p>Interfaz intuitiva diseñada para todos los usuarios.</p>
+          </div>
+        </div>
+        <div class="card bg-base-200 shadow-lg">
+          <div class="card-body">
+            <h3 class="card-title text-xl">🔒 Seguridad</h3>
+            <p>Protección de datos con encriptación avanzada.</p>
+          </div>
+        </div>
+        <div class="card bg-base-200 shadow-lg">
+          <div class="card-body">
+            <h3 class="card-title text-xl">📊 Dashboard</h3>
+            <p>Métricas en tiempo real para tomar decisiones.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="py-16 bg-neutral text-neutral-content">
+    <div class="container mx-auto px-4 text-center">
+      <h2 class="text-3xl font-bold mb-6">¿Listo para comenzar?</h2>
+      <a routerLink="/register" class="btn btn-primary btn-lg">Regístrate Gratis</a>
+    </div>
+  </section>
+</main>
+<footer class="bg-base-300 p-6">
+    <div class="container mx-auto px-4 text-center">
+    <p>© 2024 SaaSApp. Todos los derechos reservados.</p>
+    </div>
+</footer>

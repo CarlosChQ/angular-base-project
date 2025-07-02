@@ -1,0 +1,72 @@
+<header class="sticky top-0 z-50 bg-base-100 transition-shadow duration-300">
+      <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+        <a routerLink="/" class="text-2xl font-bold text-primary">SaaSApp</a>
+        <div class="flex gap-4">
+          <a routerLink="/login" class="btn btn-ghost">Iniciar Sesión</a>
+          <a routerLink="/register" class="btn btn-primary">Regístrate</a>
+        </div>
+      </div>
+</header>
+<main class="min-h-screen flex items-center justify-center bg-base-200 p-4">
+  <div class="card w-full max-w-md bg-base-100 shadow-xl">
+    <div class="card-body">
+      <h1 class="card-title text-3xl font-bold mb-2">Iniciar Sesión</h1>
+      <p class="text-gray-500 mb-6">Ingresa tus credenciales para acceder</p>
+
+      <form class="space-y-4">
+        <!-- Email -->
+        <div class="form-control">
+          <label class="label">
+            <span class="label-text">Correo Electrónico</span>
+          </label>
+          <input 
+            type="email" 
+            placeholder="tu@email.com" 
+            class="input input-bordered w-full" 
+            required
+          />
+        </div>
+
+        <!-- Password -->
+        <div class="form-control">
+          <label class="label">
+            <span class="label-text">Contraseña</span>
+          </label>
+          <input 
+            type="password" 
+            placeholder="••••••••" 
+            class="input input-bordered w-full" 
+            required
+          />
+          <label class="label">
+            <a href="#" class="label-text-alt link link-hover">¿Olvidaste tu contraseña?</a>
+          </label>
+        </div>
+
+        <!-- Submit Button -->
+        <button type="submit" class="btn btn-primary w-full mt-6">
+          Acceder
+        </button>
+
+        <!-- Divider -->
+        <div class="divider">o continúa con</div>
+
+        <!-- Social Login -->
+        <div class="flex gap-4 justify-center">
+          <button type="button" class="btn btn-outline btn-circle">
+            <img src="assets/icons/google.svg" alt="Google" class="w-5 h-5" />
+          </button>
+          <button type="button" class="btn btn-outline btn-circle">
+            <img src="assets/icons/github.svg" alt="GitHub" class="w-5 h-5" />
+          </button>
+        </div>
+
+        <!-- Register Link -->
+        <p class="text-center mt-4">
+          ¿No tienes cuenta? 
+          <a routerLink="/register" class="link link-primary">Regístrate</a>
+        </p>
+      </form>
+    </div>
+  </div>
+</main>
