@@ -1,0 +1,108 @@
+<main class="min-h-screen flex items-center justify-center bg-base-200 p-4">
+  <div class="card w-full max-w-md bg-base-100 shadow-xl">
+    <div class="card-body">
+      <h1 class="card-title text-3xl font-bold mb-2">Crear Cuenta</h1>
+      <p class="text-gray-500 mb-6">Comienza tu prueba gratuita hoy mismo</p>
+
+      <form [formGroup]="registerForm" (ngSubmit)="onSubmit()" class="space-y-4">
+        <!-- Nombre Completo -->
+        <div class="form-control">
+          <label class="label">
+            <span class="label-text">Nombre Completo</span>
+          </label>
+          <input 
+            type="text" 
+            placeholder="Ej: Juan Pérez" 
+            class="input input-bordered w-full" 
+            formControlName="fullName"
+            required
+          />
+          @if (registerForm.get('fullName')?.invalid && registerForm.get('fullName')?.touched) {
+            <span class="text-error text-xs">Este campo es requerido</span>
+          }
+        </div>
+
+        <!-- Email -->
+        <div class="form-control">
+          <label class="label">
+            <span class="label-text">Correo Electrónico</span>
+          </label>
+          <input 
+            type="email" 
+            placeholder="tu@email.com" 
+            class="input input-bordered w-full" 
+            formControlName="email"
+            required
+          />
+          @if (registerForm.get('email')?.errors?.['email'] && registerForm.get('email')?.touched) {
+            <span class="text-error text-xs">Ingresa un email válido</span>
+          }
+        </div>
+
+        <!-- Password -->
+        <div class="form-control">
+          <label class="label">
+            <span class="label-text">Contraseña</span>
+          </label>
+          <input 
+            type="password" 
+            placeholder="••••••••" 
+            class="input input-bordered w-full" 
+            formControlName="password"
+            required
+          />
+          <label class="label">
+            <span class="label-text-alt">Mínimo 8 caracteres</span>
+          </label>
+        </div>
+
+        <!-- Confirm Password -->
+        <div class="form-control">
+          <label class="label">
+            <span class="label-text">Confirmar Contraseña</span>
+          </label>
+          <input 
+            type="password" 
+            placeholder="••••••••" 
+            class="input input-bordered w-full" 
+            formControlName="confirmPassword"
+            required
+          />
+          @if (registerForm.hasError('mismatch')) {
+            <span class="text-error text-xs">Las contraseñas no coinciden</span>
+          }
+        </div>
+
+        <!-- Términos y Condiciones -->
+        <div class="form-control mt-2">
+          <label class="label cursor-pointer justify-start gap-2">
+            <input 
+              type="checkbox" 
+              class="checkbox checkbox-primary" 
+              formControlName="terms"
+            />
+            <span class="label-text">Acepto los <a href="#" class="link link-primary">Términos y Condiciones</a></span>
+          </label>
+          @if (registerForm.get('terms')?.invalid && registerForm.get('terms')?.touched) {
+            <span class="text-error text-xs">Debes aceptar los términos</span>
+          }
+        </div>
+
+        <!-- Submit Button -->
+        <button 
+          type="submit" 
+          class="btn btn-primary w-full mt-4"
+          [disabled]="registerForm.invalid"
+        >
+          Registrarse
+        </button>
+
+        <!-- Login Link -->
+        <p class="text-center mt-4">
+          ¿Ya tienes cuenta? 
+          <a routerLink="/login" class="link link-primary">Inicia Sesión</a>
+        </p>
+      </form>
+    </div>
+  </div>
+</main>
