@@ -1,21 +1,31 @@
 import { Routes } from '@angular/router';
-import { LandingPageComponent } from './features/landing/landing-page/landing-page.component';
-import { LoginComponent } from './features/auth/login/login.component';
-import { RegisterComponent } from './features/auth/register/register.component';
-import { MainLayoutComponent } from './layout/main-layout/main-layout.component';
-import { HomeComponent } from './features/dashboard/home/home.component';
 
-export const routes: Routes = [{
-    path: '', component: LandingPageComponent
-},{
-    path:'login', component: LoginComponent
-},{
-    path: 'register', component: RegisterComponent
-},{
-    path: 'dashboard', component: MainLayoutComponent,
-    children: [{
-        path: 'home',component: HomeComponent
-    },{
-        path: '', redirectTo: 'home', pathMatch: 'full'
-    }]
-}];
+export const routes: Routes = [
+  {
+    path: '',
+    loadComponent: () => import('./features/landing/landing-page/landing-page.component').then(m => m.LandingPageComponent)
+  },
+  {
+    path: 'login',
+    loadComponent: () => import('./features/auth/login/login.component').then(m => m.LoginComponent)
+  },
+  {
+    path: 'register',
+    loadComponent: () => import('./features/auth/register/register.component').then(m => m.RegisterComponent)
+  },
+  {
+    path: 'dashboard',
+    loadComponent: () => import('./layout/main-layout/main-layout.component').then(m => m.MainLayoutComponent),
+    children: [
+      {
+        path: 'home',
+        loadComponent: () => import('./features/dashboard/home/home.component').then(m => m.HomeComponent)
+      },
+      { 
+        path: '', 
+        redirectTo: 'home', 
+        pathMatch: 'full' 
+      }
+    ]
+  }
+];
