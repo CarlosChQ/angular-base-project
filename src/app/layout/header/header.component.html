@@ -1,0 +1,22 @@
+<header class="navbar bg-base-100 shadow-sm sticky top-0 z-50">
+  <div class="flex-1">
+    <button class="btn btn-ghost lg:hidden" (click)="toggleSidebar()">
+      <i class="fas fa-bars"></i> <!-- Ícono de hamburguesa -->
+    </button>
+    <a class="btn btn-ghost text-xl">SaaSApp</a>
+  </div>
+  <div class="flex-none gap-4">
+    <!-- Theme Toggle -->
+    <button class="btn btn-ghost btn-circle" (click)="toggleTheme()">
+      <i class="fas fa-moon"></i> <!-- Ícono de luna/sol -->
+    </button>
+    <!-- User Avatar -->
+    <div class="dropdown dropdown-end">
+      <div tabindex="0" class="avatar online">
+        <div class="w-10 rounded-full">
+          <img src="assets/images/avatar-demo.jpg" alt="User" />
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
